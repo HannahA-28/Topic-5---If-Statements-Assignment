@@ -13,6 +13,26 @@
 
         public static void Compass()
         {
+            int angle;
+            Console.WriteLine("Enter an angle between 0 - 360, to see which way it will go on a compass:");
+            Console.ReadLine();
+
+            if (angle >= 45 && angle <= 135)
+            {
+                Console.WriteLine("You are heading East");
+            }
+            else if (angle >= 135 && angle <= 225)
+            {
+                Console.WriteLine("You are heading South");
+            }
+            else if (angle >= 225 && angle <= 315)
+            {
+                Console.WriteLine("You are heading West");
+            }
+            else
+            {
+                Console.WriteLine("You are heading North");
+            }
 
         }
 
@@ -29,25 +49,25 @@
             if (hours == 0 && minutes > 0) hours = 1;
 
             decimal cost = 0m;
-            const decimal MIN_FEE = 4.00m;
-            const decimal HOURLY_RATE = 2.00m;
-            const decimal MAX_FEE = 20.00m;
+            const decimal Min = 4.00m;
+            const decimal Hourly = 2.00m;
+            const decimal Max = 20.00m;
 
             Console.WriteLine("PRINTING RECEIPT");
             Thread.Sleep(2000);
 
             if (hours <= 1)
             {
-                cost = MIN_FEE;
+                cost = Min;
             }
             else
             {
-                cost = MIN_FEE + ((decimal)hours - 1) * HOURLY_RATE;
+                cost = Min + ((decimal)hours - 1) * Hourly;
             }
 
-            if (cost > MAX_FEE)
+            if (cost > Max)
             {
-                cost = MAX_FEE;
+                cost = Max;
             }
 
             Console.WriteLine();

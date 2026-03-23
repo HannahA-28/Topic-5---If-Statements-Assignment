@@ -15,7 +15,8 @@
         {
             int angle;
             Console.WriteLine("Enter an angle between 0 - 360, to see which way it will go on a compass:");
-            Console.ReadLine();
+            angle = int.Parse(Console.ReadLine());
+
 
             if (angle >= 45 && angle <= 135)
             {
@@ -38,6 +39,7 @@
 
         public static void Parking()
         {
+            Console.WriteLine();
             Console.WriteLine("How many minutes were you parked in the garage?");
             if (!double.TryParse(Console.ReadLine(), out double minutes) || minutes < 0)
             {
@@ -77,7 +79,35 @@
 
         public static void Hurricane()
         {
+            Console.WriteLine();
+            string choice;
+            Console.WriteLine("Enter a hurricane catagory from 1-5, and I will display the wind speeds: ");
+            choice = Console.ReadLine();
 
+            if (choice == "1")
+            {
+                Console.WriteLine("Catagory 1 speeds are: 74-95 mph, or 64-82 kt, or 119-153 km/hr");
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("Catagory 2 speeds are: 96-110 mph, or 83-95 kt, or 154-177 km/hr");
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine("Catagory 3 speeds are: 111-130 mph, or 96-113 kt, or 178-209 km/hr");
+            }
+            else if (choice == "4")
+            {
+                Console.WriteLine("Catagory 4 speeds are: 131-155 mph, or 114-135 kt, or 210-249 km/hr");
+            }
+            else if (choice == "5")
+            {
+                Console.WriteLine("Catagory 5 speeds are greater than: 15mph, or 135 kt, or 249 km/hr");
+            }
+            else
+            {
+                Console.WriteLine("Ivalid catagory");
+            }
         }
     }
 }
